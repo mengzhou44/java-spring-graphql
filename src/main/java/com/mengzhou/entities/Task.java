@@ -7,8 +7,8 @@ import lombok.*;
 @Getter
 @Setter
 @Builder
-public class Book {
+public class Task {
     private String id;
-    private String title;
-    private String author;
+    private String name;
+    private Boolean done;
 }

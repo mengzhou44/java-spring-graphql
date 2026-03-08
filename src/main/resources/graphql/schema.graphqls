@@ -4,11 +4,20 @@ type Book {
   author: String
 }
 
+type Task {
+  id: ID!
+  name: String
+  done: Boolean
+}
+
 type Query {
   bookById(id: ID!): Book
   allBooks: [Book]
+  allTasks: [Task]
 }
 
 type Mutation {
   addBook(id: ID!, title: String!, author: String!): Book
+  addTask(id: ID!, name: String!): Task
+  completeTask(id: ID!) : Boolean
 }

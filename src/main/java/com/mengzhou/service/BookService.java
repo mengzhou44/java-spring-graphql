@@ -27,4 +27,10 @@ public class BookService {
     public List<Book> getAllBooks() {
         return new ArrayList<>(books.values());
     }
+
+    public Book addBook(String id, String title, String author) {
+        Book book = Book.builder().id(id).title(title).author(author).build();
+        books.put(id, book);
+        return book;
+    }
 }

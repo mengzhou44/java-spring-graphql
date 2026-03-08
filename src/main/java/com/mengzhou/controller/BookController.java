@@ -9,8 +9,6 @@ import org.springframework.stereotype.Controller;
 
 import java.util.List;
 
-import static com.mengzhou.entities.Book.*;
-
 @Controller
 public class BookController {
 
@@ -32,8 +30,6 @@ public class BookController {
 
     @MutationMapping
     public Book addBook(@Argument String id, @Argument String title, @Argument String author) {
-        Book newBook =  Book.builder().id(id).title(title).author(author).build();
-        System.out.println(newBook);
-        return newBook;
+        return bookService.addBook(id, title, author);
     }
 }
